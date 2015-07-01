@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace LanguageTrainer.Model
 {
     [Serializable]
-    public class Vocabulary : ISerializable
+    public class Vocabulary : ISerializable, IEnumerable
     {
         public ObservableCollection<LanguageWord> Words { get; set; }
         public Languages ForeignLanguage { get; set; }
@@ -49,6 +50,11 @@ namespace LanguageTrainer.Model
                 info.AddValue(string.Format("Local{0}", currentWordIdx), w.Local);
                 currentWordIdx++;
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Words.GetEnumerator();
         }
     }
 }

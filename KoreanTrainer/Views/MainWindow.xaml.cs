@@ -1,5 +1,5 @@
-﻿using LanguageTrainer.Model;
-using LanguageTrainer.ViewModel;
+﻿using KoreanTrainer.Model;
+using KoreanTrainer.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LanguageTrainer.Views
+namespace KoreanTrainer.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

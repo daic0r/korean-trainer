@@ -1,7 +1,7 @@
-﻿<Application x:Class="LanguageTrainer.App"
+﻿<Application x:Class="KoreanTrainer.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:model="clr-namespace:LanguageTrainer.Model"
+             xmlns:model="clr-namespace:KoreanTrainer.Model"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <DataTemplate x:Key="WordTemplate" DataType="{x:Type model:Vocable}">

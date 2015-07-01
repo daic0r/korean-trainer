@@ -1,9 +1,9 @@
-﻿<Window x:Class="LanguageTrainer.Views.MainWindow"
+﻿<Window x:Class="KoreanTrainer.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
-        xmlns:model="clr-namespace:LanguageTrainer.Model"
-        xmlns:commands="clr-namespace:LanguageTrainer.Commands"
+        xmlns:model="clr-namespace:KoreanTrainer.Model"
+        xmlns:commands="clr-namespace:KoreanTrainer.Commands"
         Title="Language Trainer" Height="768" Width="1024"
         DataContext="{Binding RelativeSource={RelativeSource Self}, Path=MyViewModel, diag:PresentationTraceSources.TraceLevel=High}">
     <Window.CommandBindings>

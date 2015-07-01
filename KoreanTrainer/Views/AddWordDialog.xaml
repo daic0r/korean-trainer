@@ -1,8 +1,8 @@
-﻿<Window x:Class="LanguageTrainer.Views.AddWordDialog"
+﻿<Window x:Class="KoreanTrainer.Views.AddWordDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:other="clr-namespace:LanguageTrainer.Other"
-        xmlns:model="clr-namespace:LanguageTrainer.Model"
+        xmlns:other="clr-namespace:KoreanTrainer.Other"
+        xmlns:model="clr-namespace:KoreanTrainer.Model"
         Title="Add word" Height="250" Width="400" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>

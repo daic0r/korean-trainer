@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LanguageTrainer.Model;
+using KoreanTrainer.Model;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace LanguageTrainer.ViewModel
+namespace KoreanTrainer.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {

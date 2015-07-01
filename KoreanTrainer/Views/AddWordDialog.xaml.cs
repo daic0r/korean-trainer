@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace LanguageTrainer.Views
+namespace KoreanTrainer.Views
 {
     /// <summary>
     /// Interaction logic for AddWordDialog.xaml

@@ -53,8 +53,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Vocable.cs" />
+    <Compile Include="Other\EnumHelper.cs" />
+    <Compile Include="ViewModel\AddWordViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Page Include="Views\AddWordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,7 +71,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\MyCommands.cs" />
-    <Compile Include="Model\LanguageWord.cs" />
+    <Compile Include="Views\AddWordDialog.xaml.cs">
+      <DependentUpon>AddWordDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -61,6 +61,12 @@ namespace LanguageTrainer.Views
             MyViewModel.LoadVocabulary();
         }
 
+        private void CommandBinding_AddWord_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Views.AddWordDialog diag = new AddWordDialog();
+            diag.ShowDialog();
+        }
+
         void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             if (PropertyChanged != null)

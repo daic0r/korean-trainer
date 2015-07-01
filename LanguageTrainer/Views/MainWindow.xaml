@@ -3,12 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         xmlns:model="clr-namespace:LanguageTrainer.Model"
+        xmlns:commands="clr-namespace:LanguageTrainer.Commands"
         Title="Language Trainer" Height="768" Width="1024"
         DataContext="{Binding RelativeSource={RelativeSource Self}, Path=MyViewModel, diag:PresentationTraceSources.TraceLevel=High}">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit_Executed"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="CommandBinding_Save_Executed"/>
         <CommandBinding Command="ApplicationCommands.Open" Executed="CommandBinding_Load_Executed"/>
+        <CommandBinding Command="commands:MyCommands.AddWord" Executed="CommandBinding_AddWord_Executed"/>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -19,10 +21,10 @@
                 <MenuItem Header="_Exit" Command="ApplicationCommands.Close"/>
             </MenuItem>
             <MenuItem Header="_Vocabulary">
-                <MenuItem Header="Add word..."/>
+                <MenuItem Header="Add word..." Command="commands:MyCommands.AddWord"/>
             </MenuItem>
         </Menu>
-        <ListBox x:Name="listLeft" ItemTemplate="{StaticResource WordTemplate}" ItemsSource="{Binding CurrentVocabulary.Words}">
+        <ListBox x:Name="listLeft" ItemTemplate="{StaticResource WordTemplate}" ItemsSource="{Binding CurrentVocabulary.Vocables}">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

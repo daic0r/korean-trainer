@@ -1,0 +1,48 @@
+﻿<Window x:Class="LanguageTrainer.Views.AddWordDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:other="clr-namespace:LanguageTrainer.Other"
+        xmlns:model="clr-namespace:LanguageTrainer.Model"
+        Title="Add word" Height="250" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="_Foreign word:" Target="{Binding ElementName=foreignTb}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="foreignTb" Text="Hallo" Margin="0,0,10,0"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="_Local word:" Target="{Binding ElementName=localTb}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="localTb" Text="Hallo" Margin="0,0,10,0"/>
+        <!--
+        <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,5,5" Header="Word VocableKind">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type RadioButton}">
+                        <Setter Property="Margin" Value="5,3,0,3"/>
+                    </Style>
+                </StackPanel.Resources>
+                <RadioButton x:Name="nounRb" Content="Noun"/>
+                <RadioButton x:Name="verbRb" Content="Verb"/>
+                <RadioButton x:Name="adjectiveRb" Content="Adjective"/>
+                <RadioButton x:Name="adverbRb" Content="Adverb"/>
+            </StackPanel>
+        </GroupBox>-->
+        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="30" x:Name="kindCb" other:EnumHelper.Enum="{x:Type model:VocableKind}"/>
+        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="_Add" Margin="20,0,20,0"/>
+            <Button Grid.Column="1" Content="_Cancel"  Margin="20,0,20,0"/>
+        </Grid>
+    </Grid>
+</Window>

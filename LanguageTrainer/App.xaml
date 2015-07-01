@@ -4,8 +4,8 @@
              xmlns:model="clr-namespace:LanguageTrainer.Model"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate x:Key="WordTemplate" DataType="{x:Type model:LanguageWord}">
-            <UniformGrid Columns="2" HorizontalAlignment="Stretch">
+        <DataTemplate x:Key="WordTemplate" DataType="{x:Type model:Vocable}">
+            <UniformGrid Columns="3" HorizontalAlignment="Stretch">
                 <UniformGrid.Resources>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="FontFamily" Value="Courier New"/>
@@ -16,6 +16,7 @@
                 </UniformGrid.Resources>
                 <TextBlock Grid.Column="0" Text="{Binding Foreign}"/>
                 <TextBlock Grid.Column="1" Text="{Binding Local}"/>
+                <TextBlock Grid.Column="2" Text="{Binding Kind}"/>
             </UniformGrid>
         </DataTemplate>
         

@@ -28,28 +28,38 @@ namespace LanguageTrainer.ViewModel
         public MainWindowViewModel()
         {
 //             CurrentVocabulary = new Vocabulary();
-//             CurrentVocabulary.Words.Add(new LanguageWord("먹다", "to eat"));
-//             CurrentVocabulary.Words.Add(new LanguageWord("살다", "to live, reside"));
-//             CurrentVocabulary.Words.Add(new LanguageWord("싸다", "cheap"));
-//             CurrentVocabulary.Words.Add(new LanguageWord("가족", "family"));
-//             CurrentVocabulary.Words.Add(new LanguageWord("사랑하다", "to love"));
-//             CurrentVocabulary.Words.Add(new LanguageWord("이름", "name"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("먹다", "to eat"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("살다", "to live, reside"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("싸다", "cheap"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("가족", "family"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("사랑하다", "to love"));
+//             CurrentVocabulary.Vocables.Add(new Vocable("이름", "name"));
         }
 
         public void SaveVocabulary()
         {
-            Stream stream = File.Open("Vocabulary.voc", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(stream, CurrentVocabulary);
-            stream.Close();
+//             Stream stream = File.Open("Vocabulary.voc", FileMode.Create);
+//             BinaryFormatter bf = new BinaryFormatter();
+//             bf.Serialize(stream, CurrentVocabulary);
+//             stream.Close();
+            using (var stream = new FileStream("Vocabulary.voc", FileMode.Create))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(stream, CurrentVocabulary);
+            }
         }
 
         public void LoadVocabulary()
         {
-            Stream stream = File.Open("Vocabulary.voc", FileMode.Open);
-            BinaryFormatter bf = new BinaryFormatter();
-            CurrentVocabulary = (Vocabulary)bf.Deserialize(stream);
-            stream.Close();
+//             Stream stream = File.Open("Vocabulary.voc", FileMode.Open);
+//             BinaryFormatter bf = new BinaryFormatter();
+//             CurrentVocabulary = (Vocabulary)bf.Deserialize(stream);
+//             stream.Close();
+            using (var stream = new FileStream("Vocabulary.voc", FileMode.Open))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                CurrentVocabulary = (Vocabulary) bf.Deserialize(stream);
+            }
         }
     }
 }

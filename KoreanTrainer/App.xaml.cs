@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace LanguageTrainer
+namespace KoreanTrainer
 {
     /// <summary>
     /// Interaction logic for App.xaml

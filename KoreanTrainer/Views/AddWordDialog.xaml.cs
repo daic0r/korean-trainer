@@ -1,5 +1,4 @@
-﻿using LanguageTrainer.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LanguageTrainer
+namespace KoreanTrainer.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddWordDialog.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddWordDialog : Window
     {
-        public MainWindow()
+        public AddWordDialog()
         {
             InitializeComponent();
-
-//             LanguageWord w = new LanguageWord();
-//             w.Foreign = "괜찮다";
-//             w.Local = "Hallo";
-// 
-//             listLeft.Items.Add(w);
         }
     }
 }

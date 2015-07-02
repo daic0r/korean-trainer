@@ -6,15 +6,6 @@ using System.Threading.Tasks;
 
 namespace KoreanTrainer.Model
 {
-
-    [Serializable]
-    public enum Languages
-    {
-        German,
-        English,
-        Korean
-    }
-
     [Serializable]
     public enum VocableKind
     {

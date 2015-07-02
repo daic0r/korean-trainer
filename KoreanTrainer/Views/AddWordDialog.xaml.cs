@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KoreanTrainer.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace KoreanTrainer.Views
     /// </summary>
     public partial class AddWordDialog : Window
     {
+        public AddWordViewModel MyViewModel { get; private set; }
+
         public AddWordDialog()
         {
+            MyViewModel = new AddWordViewModel();
             InitializeComponent();
+        }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
         }
     }
 }

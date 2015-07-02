@@ -5,7 +5,8 @@
         xmlns:model="clr-namespace:KoreanTrainer.Model"
         Title="Add word" Height="250" Width="400" ResizeMode="NoResize" 
         ShowInTaskbar="False"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner"
+        DataContext="{Binding RelativeSource={RelativeSource Self}, Path=MyViewModel}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -19,10 +20,10 @@
         </Grid.ColumnDefinitions>
         
         <Label Grid.Row="0" Grid.Column="0" Content="_Foreign word:" Target="{Binding ElementName=foreignTb}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="foreignTb" Text="Hallo" Margin="0,0,10,0"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="foreignTb" Text="{Binding ForeignWord, Mode=OneWayToSource}" Margin="0,0,10,0"/>
 
         <Label Grid.Row="1" Grid.Column="0" Content="_Local word:" Target="{Binding ElementName=localTb}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="localTb" Text="Hallo" Margin="0,0,10,0"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="localTb" Text="{Binding LocalWord, Mode=OneWayToSource}" Margin="0,0,10,0"/>
         <!--
         <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,5,5" Header="Word VocableKind">
             <StackPanel>
@@ -37,14 +38,14 @@
                 <RadioButton x:Name="adverbRb" Content="Adverb"/>
             </StackPanel>
         </GroupBox>-->
-        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="30" x:Name="kindCb" other:EnumHelper.Enum="{x:Type model:VocableKind}"/>
+        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="30" x:Name="kindCb" other:EnumHelper.Enum="{x:Type model:VocableKind}" SelectedItem="{Binding Kind}"/>
         <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="_Add" Margin="20,0,20,0"/>
-            <Button Grid.Column="1" Content="_Cancel"  Margin="20,0,20,0"/>
+            <Button Grid.Column="0" Content="_Add" Margin="20,0,20,0" Click="OK_Click"/>
+            <Button Grid.Column="1" Content="_Cancel"  Margin="20,0,20,0" Click="Cancel_Click"/>
         </Grid>
     </Grid>
 </Window>

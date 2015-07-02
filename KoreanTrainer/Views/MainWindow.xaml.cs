@@ -64,7 +64,16 @@ namespace KoreanTrainer.Views
         private void CommandBinding_AddWord_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Views.AddWordDialog diag = new AddWordDialog();
+            diag.Owner = this;
             diag.ShowDialog();
+            if (diag.DialogResult ?? false)
+            {
+                string result;
+                result = string.Format("Foreign word: {0}\nLocal word: {1}\nKind: {2}", diag.MyViewModel.ForeignWord, diag.MyViewModel.LocalWord, diag.MyViewModel.Kind);
+                MessageBox.Show(result);
+                MyViewModel.CurrentVocabulary.Vocables.Add(new Vocable(diag.MyViewModel.ForeignWord, diag.MyViewModel.LocalWord, diag.MyViewModel.Kind));
+            }
+
         }
 
         void OnPropertyChanged([CallerMemberName] string propertyName = "")

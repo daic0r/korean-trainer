@@ -13,13 +13,9 @@ namespace KoreanTrainer.Model
     public class Vocabulary : IEnumerable
     {
         public ObservableCollection<Vocable> Vocables { get; set; }
-        public Languages ForeignLanguage { get; set; }
-        public Languages LocalLanguage { get; set; }
 
         public Vocabulary()
         {
-            ForeignLanguage = Languages.Korean;
-            LocalLanguage = Languages.English;
             Vocables = new ObservableCollection<Vocable>();
         }
 

@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\MyCommands.cs" />
     <Compile Include="Model\Vocable.cs" />
     <Compile Include="Other\EnumHelper.cs" />
     <Compile Include="ViewModel\AddWordViewModel.cs" />
@@ -70,7 +71,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\MyCommands.cs" />
     <Compile Include="Views\AddWordDialog.xaml.cs">
       <DependentUpon>AddWordDialog.xaml</DependentUpon>
     </Compile>

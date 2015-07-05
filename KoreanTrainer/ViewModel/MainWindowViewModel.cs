@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using KoreanTrainer.Model;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using KoreanTrainer.Other;
 
 namespace KoreanTrainer.ViewModel
 {
@@ -59,6 +60,18 @@ namespace KoreanTrainer.ViewModel
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 CurrentVocabulary = (Vocabulary) bf.Deserialize(stream);
+            }
+        }
+
+        public void AddWord()
+        {
+            if (Globals.DataProviderService != null)
+            {
+                Vocable v = Globals.DataProviderService.RetrieveNewVocable();
+                if (v != null)
+                {
+                    CurrentVocabulary.Vocables.Add(v);
+                }
             }
         }
     }

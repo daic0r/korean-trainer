@@ -28,7 +28,7 @@ namespace KoreanTrainer.ViewModel
 
         public MainWindowViewModel()
         {
-//             CurrentVocabulary = new Vocabulary();
+             CurrentVocabulary = new Vocabulary();
 //             CurrentVocabulary.Vocables.Add(new Vocable("먹다", "to eat"));
 //             CurrentVocabulary.Vocables.Add(new Vocable("살다", "to live, reside"));
 //             CurrentVocabulary.Vocables.Add(new Vocable("싸다", "cheap"));

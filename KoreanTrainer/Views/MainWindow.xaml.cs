@@ -43,7 +43,7 @@ namespace KoreanTrainer.Views
 
         public MainWindow()
         {
-            Globals.DataProviderService = new DialogDataProvider(this);
+            Globals.Initialize(this);
             MyViewModel = new MainWindowViewModel(); 
             InitializeComponent();
         }

@@ -11,6 +11,20 @@ namespace KoreanTrainer.ViewModel
     {
         public string ForeignWord { get; set; }
         public string LocalWord { get; set; }
-        public VocableKind Kind { get; set; }
+
+        private VocableKind _kind;
+        public VocableKind Kind
+        {
+            get
+            {
+                return _kind;
+            }
+            set
+            {
+                _kind = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Conjugation { get; set; }
     }
 }

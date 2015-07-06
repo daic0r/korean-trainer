@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Attributes\EnumReadableNameAttribute.cs" />
     <Compile Include="Commands\MyCommands.cs" />
     <Compile Include="Interfaces\IDataProviderService.cs" />
     <Compile Include="Model\Vocable.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KoreanTrainer.Attributes;
 
 namespace KoreanTrainer.Model
 {
@@ -14,6 +15,21 @@ namespace KoreanTrainer.Model
         Verb,
         Adjective,
         Adverb
+    }
+
+    public enum Conjugation
+    {
+        Regular,
+        [EnumReadableName("ㅅ irregular")]
+        sIrregualr,
+        [EnumReadableName("ㅂ irregular")]
+        bIrregular,
+        [EnumReadableName("ㄷ irregular")]
+        dIrregular,
+        [EnumReadableName("르 irregular")]
+        reulIrregular,
+        [EnumReadableName("ㅎ irregular")]
+        hIrregular
     }
 
     [Serializable]

@@ -55,25 +55,19 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="0" Height="30" x:Name="kindCb" other:EnumHelper.Enum="{x:Type model:VocableKind}" SelectedItem="{Binding Kind, Mode=OneWayToSource, diag:PresentationTraceSources.TraceLevel=High}"/>
-            <ComboBox Grid.Column="1" Height="30" x:Name="conjugationCb" other:EnumHelper.Enum="{x:Type model:Conjugation}" SelectedItem="{Binding Conjugation}">
+            <ComboBox Grid.Column="0" Height="30" x:Name="kindCb" other:EnumHelper.Enum="{x:Type model:VocableKind}" SelectedValue="{Binding Kind, Mode=OneWayToSource, diag:PresentationTraceSources.TraceLevel=High}"/>
+            <ComboBox Grid.Column="1" Height="30" x:Name="conjugationCb" other:EnumHelper.Enum="{x:Type model:Conjugation}" SelectedValue="{Binding Conjugation, Mode=OneWayToSource, diag:PresentationTraceSources.TraceLevel=High}" IsSynchronizedWithCurrentItem="True">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox">
                         <!-- Must set in the style, because if the value was set locally on the ComboBox that local value would always have higher priority than the value set by the trigger -->
-                        <Setter Property="IsEnabled" Value="True"/>
+                        <Setter Property="IsEnabled" Value="False"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Kind, Mode=OneWay, diag:PresentationTraceSources.TraceLevel=High}" Value="Verb">
                                 <Setter Property="IsEnabled" Value="True"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </ComboBox.Style>
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}"  other:EnumHelper.ExtendedInfo="True"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+                </ComboBox.Style>            </ComboBox>
         </Grid>
         <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>

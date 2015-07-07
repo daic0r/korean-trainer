@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace KoreanTrainer.ViewModel
 {
@@ -25,6 +26,6 @@ namespace KoreanTrainer.ViewModel
                 OnPropertyChanged();
             }
         }
-        public string Conjugation { get; set; }
+        public Conjugation Conjugation { get; set; }
     }
 }

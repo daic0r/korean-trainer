@@ -17,6 +17,7 @@ namespace KoreanTrainer.Model
         Adverb
     }
 
+    [Serializable]
     public enum Conjugation
     {
         Regular,

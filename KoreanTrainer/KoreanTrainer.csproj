@@ -56,7 +56,11 @@
     <Compile Include="Attributes\EnumReadableNameAttribute.cs" />
     <Compile Include="Commands\MyCommands.cs" />
     <Compile Include="Interfaces\IDataProviderService.cs" />
+    <Compile Include="Model\Adjective.cs" />
+    <Compile Include="Model\AdjectiveVerb.cs" />
+    <Compile Include="Model\Verb.cs" />
     <Compile Include="Model\Vocable.cs" />
+    <Compile Include="Model\VocableFactory.cs" />
     <Compile Include="Other\DialogDataProvider.cs" />
     <Compile Include="Other\EnumHelper.cs" />
     <Compile Include="Other\Globals.cs" />
